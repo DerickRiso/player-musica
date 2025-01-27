@@ -53,10 +53,11 @@ body {
     margin: 0;
     margin-top: 10px;
     padding: 5px 0px 0px 16px;
+    border-radius: 8px;
 }
 
 .biblioteca ul {
-    margin-top: 20px;
+    margin-top: 9px;
     padding: 0 20px 10px 20px;
 }
 
