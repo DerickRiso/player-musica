@@ -2,6 +2,7 @@ body {
     background-color: #000;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
@@ -11,7 +12,6 @@ body {
     width: 300px;
 }
 
-/* Itens da sidebar */
 .sidebar ul li {
     padding: 10px 0px;
 }
@@ -33,7 +33,52 @@ body {
     padding: 0 20px 10px 20px;
 }
 
-/* Classe para o span com texto */
+.sidebar-navigation {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 16px 0px 0px 16px;
+}
+
+/* Biblioteca */
+.library {
+    background-color: #121212;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 8px;
+    color: #b3b3b3;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.library .library-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.library .library-content .library-button {
+    display: flex;
+    margin-right: 10px;
+    color: #b3b3b3;
+    background-color: transparent;
+    border: 0;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    padding: 20px 10px;
+}
+
+/* Itens gerais */
+
+a {
+    text-decoration: none;
+}
+
 .texto {
     color: #b3b3b3;
     text-decoration: none;
@@ -42,30 +87,7 @@ body {
     font-family: "DM Sans", sans-serif;
 }
 
-.sidebar-navigation {
-    background-color: #121212;
-    border-radius: 8px;
-    padding: 16px 0px 0px 16px;
-}
-
-.biblioteca {
-    background-color: #121212;
-    margin: 0;
-    margin-top: 10px;
-    padding: 5px 0px 0px 16px;
-    border-radius: 8px;
-}
-
-.biblioteca ul {
-    margin-top: 9px;
-    padding: 0 20px 10px 20px;
-}
-
-span {
-    color: #b3b3b3
-}
-
-a {
-    text-decoration: none;
+.icons {
+    color: #b3b3b3;
 }
 
