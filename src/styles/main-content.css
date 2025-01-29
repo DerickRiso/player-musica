@@ -93,3 +93,26 @@
     border-radius: 40px;
     border: none;
 }
+
+.playlists {
+    background-color: #121212;
+    margin: 10px;
+    border-radius: 8px;
+    height: 60vh
+}
+
+.playlist-title h1{
+    padding: 20px;
+    margin-left: 20px;
+    font-size: 3em;
+    color: #fff;
+    font-weight: 700;
+}
+
+.playlist-title h2 {
+    padding: 10px;
+    margin-left: 30px;
+    font-size: 2em;
+    color: #fff;
+    font-weight: 700;
+}
