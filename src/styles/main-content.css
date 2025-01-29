@@ -101,6 +101,10 @@
     height: 60vh
 }
 
+.playlist-title {
+    position: fixed;
+}
+
 .playlist-title h1{
     padding: 20px;
     margin-left: 20px;
