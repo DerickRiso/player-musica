@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"/>
 </head>
 <body>
+    <!--Barra lateral-->
     <div class="sidebar">
         <nav class="sidebar-navigation">
         <!--Logo-->
@@ -78,6 +79,35 @@
         </div>
     </div>
 
+    <!--Conteúdo principal-->
+    <main>
+        <div class="main-container">
+            <!--Cabeçalho-->
+            <nav class="header-navigation">
+                <div class="navigation">
+                    <button class="arrow-left">
+                        <img src="./src/assets/icons/small-left.png" alt="Seta esquerda">
+                    </button>
+
+                    <button class="arrow-right">
+                        <img src="./src/assets/icons/small-right.png" alt="Seta direita">
+                    </button>
+
+                    <div class="header-search">
+                        <img src="./src/assets/icons/search.png">
+                        <input id="search-input" type="text" maxlength="800" placeholder="O que você quer ouvir?"/>
+                    </div>
+
+                    <div class="header-login">
+                        <button class="subscribe">Inscreva-se</button>
+                        <button class="login">Entrar</button>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </main>
+
     <footer>
         <div>
             <p>Testar o Premium de graça</p>
@@ -86,8 +116,6 @@
         <button>Inscreva-se grátis</button>
     </footer>
     
-
-
     <script src="./script.js"></script>
 </body>
 </html>
