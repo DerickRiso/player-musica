@@ -7,4 +7,8 @@
     --bg-icon: #131313;
     --bg-arrow-color: rgba(0,0,07);
 
+
+    --column-count: 5;
+    --grid-gap: 24px;
+    --min-container-width: 372px;
 }
