@@ -14,6 +14,7 @@ function displayResults(results) {
     const artistName = document.getElementById('artist-name')
     const artistImage = document.getElementById('artist-img')
 
+    // Precisa criar elementos dinâmicamente, caso contrário irá mostrar apenas um ultimo dado
     results.forEach(element => {
         artistName.innerText = element.name
         artistImage.src = element.urlImg
