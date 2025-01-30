@@ -252,12 +252,6 @@
 
 /* CARD ARTISTA */
 
-.artist {
-  --column-count: 5;
-  --grid-gap: 24px;
-  --min-container-width: 372px;
-}
-
 .hidden {
   display: none;
 }
@@ -272,11 +266,10 @@
 .artist-card {
   background: #181818;
   border-radius: 8px;
-  /* -ms-flex: 1; */
   isolation: isolate;
-  padding: 16px;
+  padding: 16px 30px;
   position: relative;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
   width: 100%;
 }
 
