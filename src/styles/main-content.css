@@ -120,6 +120,7 @@
     padding: 10px;
     border-radius: 8px;
     height: auto;
+    min-height: 180%;
 }
 
 /* TITULO DA SEÇÃO PLAYLISTS */
