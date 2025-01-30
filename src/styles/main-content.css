@@ -117,9 +117,9 @@
 .playlist-container {
     background-color: #121212;
     margin: 10px;
-    padding-top: 10px;
+    padding: 10px;
     border-radius: 8px;
-    height: 68vh
+    height: auto;
 }
 
 /* TITULO DA SEÇÃO PLAYLISTS */
@@ -128,23 +128,26 @@
     margin: 10px;
     border-radius: 8px;
     height: 24vh;
-    width: 69vw;
+    min-width: 300px;
 }
 
 .playlist-title h1 {
     padding: 20px;
-    margin-left: 20px;
     font-size: 3em;
     color: #fff;
     font-weight: 700;
+    position: absolute;
+    left: 330px;
 }
 
 .playlist-title h2 {
     padding: 10px;
-    margin-left: 30px;
     font-size: 2em;
     color: #fff;
     font-weight: 700;
+    position: absolute;
+    left: 341px;
+    top: 200px;
 }
 
 /* SCROLL*/
@@ -161,15 +164,16 @@
 .offer__scroll-container::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
-
+/* FIM SCROLL */
 
 .offer-list-item {
     display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 16px;
     gap: 16px;
     margin-bottom: 16px;
+    overflow-x: hidden;
 }
 
 .cards {
