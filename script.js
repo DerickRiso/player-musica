@@ -1,5 +1,57 @@
+const searchInput = document.getElementById('search-input')
+const resultsArtist = document.getElementById('result-artist')
+const resultPlaylist = document.getElementById('result-playlists')
+
+function requestApi(searchValue) {
+    const url = `http://localhost:3000/artists?name_like${searchValue}`
+    fetch(url)
+        .then((response) => response.json())
+        .then((results) => displayResults(results)) 
+}
+
+function displayResults(results) {
+    resultPlaylist.classList.add('hidden')
+    const artistName = document.getElementById('artist-name')
+    const artistImage = document.getElementById('artist-img')
+
+    results.forEach(element => {
+        artistName.innerText = element.name
+        artistImage.src = element.urlImg
+    })
+
+    resultsArtist.classList.remove('hidden')
+
+}
+
+document.addEventListener('input', function() {
+    const searchValue = searchInput.value.toLowerCase()
+    if (searchInput === '') {
+        resultPlaylist.classList.add('hidden')
+        resultsArtist.classList.remove('hidden')
+        return;
+    } 
+
+    requestApi(searchValue)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function cumprimentar() {
-    console.log(`${cumprimento}`)
     var res = document.getElementById('hello')
     var data = new Date()
     var hora = data.getHours()
