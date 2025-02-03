@@ -5,6 +5,7 @@ body {
 
 /* Sidebar */
 .sidebar {
+    backdrop-filter: blur(300px);
     position: fixed;
     top: 0;
     left: 0;
@@ -176,6 +177,7 @@ footer {
     padding: 25px;
     background-image: linear-gradient(to left, #3A70BF, #92227D);
     position: fixed;
+    z-index: 1;
     top: 86vh;
     left: 0;
     right: 0;
@@ -199,6 +201,13 @@ footer button:hover {
     transform: scale(1.04);
 }
 
+.blur {
+    height: 90vh;
+    width: 90px;
+    background-color: #3A70BF;
+    z-index: 0;
+
+}
 
 /* Itens gerais */
 a {

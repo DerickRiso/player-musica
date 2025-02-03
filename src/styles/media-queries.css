@@ -25,21 +25,58 @@
     .header-login button {
         width: 100px;
     }
+
+    footer {
+        top: 83vh;
+        z-index: 1;
+    }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
+    body {
+        zoom: 90%;
+        min-height: 570vh;
+    }
+
+    .sidebar{
+        width: 230px;
+    }
+
+    .main-container {
+        margin-left: 260px;
+        width: 290px
+    }
+
+    .playlist-title {
+        min-width: 200px;
+        padding: 0;
+        margin:0;
+    }
+
     .playlist-title h1 {
         font-size: 2.4em;
-        width: 200px
+        width: 200px;
+        padding: 0;
+        margin: 0;
+        margin-left: -5px;
+        padding-top: 20px;
     }
 
     .playlist-title h2 {
         font-size: 1.3em;
-        width: 300px
+        width: 200px;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        margin-left: -40px;
+    }
+
+    .offer-list-item {
+        grid-template-columns: 1fr;
     }
 
     footer {
-        top: 81vh;
+        top: 92vh;
         z-index: 1;
         font-size: 0.8em;
     }
