@@ -1,5 +1,39 @@
+/* Tablets e notebooks menores */
 @media screen and (max-width: 1015px) {
     .offer-list-item {
         grid-template-columns: 1fr 1fr;
     }
+
+    .sidebar {
+        width: 250px;
+    }
+
+    .header-navigation {
+        width: 62vw;
+        margin-left: -30px;
+    }
+
+    .header-search {
+        max-width: 200px;
+        margin-left: 5px;
+    }
+
+    .header-login .subscribe {
+        margin: 0;
+    }
+
+    .header-login button {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .playlist-title h1 {
+        font-size: 2.4em;
+    }
+
+    .playlist-title h2 {
+        font-size: 1.em;
+    }
+
 }
