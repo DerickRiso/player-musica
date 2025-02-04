@@ -2,23 +2,35 @@ const searchInput = document.getElementById('search-input')
 const resultsArtist = document.getElementById('result-artist')
 const resultPlaylist = document.getElementById('result-playlists')
 
+
+// Busca resultados da pesquisa na api
 function requestApi(searchValue) {
     const url = `http://localhost:3000/artists?name_like=${searchValue}`
-    fetch(url)
-        .then((response) => response.json())
-        .then((results) => displayResults(results)) 
-}
+    fetch(url)  // Busca dados na api
+        .then((response) => response.json()) // Retorna uma resposta (especificado em json)
+        .then((results) => displayResults(results)) // Results é um objeto json com a resposta da busca
+        
+};
 
+
+// Mostra os resultados e oculta as playlists
 function displayResults(results) {
-    resultPlaylist.classList.add('hidden')
-    const artistName = document.getElementById('artist-name')
-    const artistImage = document.getElementById('artist-img')
+    resultPlaylist.classList.add('hidden')  // Oculta as playlists
+    
+    const artistName = document.getElementById('artist-name')   // Define constantes para os dados da api
+    const artistImage = document.getElementById('artist-img')   //
+
+    results.forEach((element) => {          // NA TEORIA mostra os resultados da pesquisa com filtro, NA TEORIA 
+    artistName.innerText = element.name     // 
+    artistImage.src = element.urlImg        //
+    });                                     //
+    
 
     // Precisa criar elementos dinâmicamente, caso contrário irá mostrar apenas um ultimo dado
     results.forEach(element => {
         artistName.innerText = element.name
         artistImage.src = element.urlImg
-    })
+    });
 
     resultsArtist.classList.remove('hidden')
 }
@@ -32,25 +44,10 @@ document.addEventListener('input', function() {
     } 
 
     requestApi(searchValue)
-})
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Mostra um cumprimento pelo horário do dia
 function cumprimentar() {
     var res = document.getElementById('hello')
     var data = new Date()
@@ -68,4 +65,4 @@ function cumprimentar() {
     }
 
     res.innerHTML = `${cumprimento}`
-}
+};
