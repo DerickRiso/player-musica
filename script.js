@@ -2,14 +2,17 @@ const searchInput = document.getElementById('search-input')
 const resultsArtist = document.getElementById('result-artist')
 const gridCont = document.getElementById('grid-container')
 const resultPlaylist = document.getElementById('result-playlists')
-
+const searchValue = searchInput.value
 
 // Busca resultados da pesquisa na api
 function requestApi(searchValue) {
     const url = `http://localhost:3000/artists?name_like=${searchValue}`//ta dando erro
     fetch(url)  // Busca dados na api
         .then((response) => response.json()) // Retorna uma resposta em json
-        .then((results) => displayResults(results)) // Results é um objeto json com a resposta da busca      
+        .then((results) => displayResults(results)) // Results é um objeto json com a resposta da busca    
+        .catch((error) => {
+            console.error('Houve um problema com a operação fetch:', error);
+        });
 };
 
 
