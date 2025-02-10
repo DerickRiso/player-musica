@@ -1,6 +1,7 @@
 const searchInput = document.getElementById('search-input')
 const resultsArtist = document.getElementById('result-artist')
 const gridCont = document.getElementById('grid-container')
+const cardArtist = document.getElementById('artist-card')
 const resultPlaylist = document.getElementById('result-playlists')
 const searchValue = searchInput.value
 
@@ -28,7 +29,7 @@ function displayResults(resultado) {
     
         // Cria um elemento para o texto do card
         const artistName = document.getElementById('artist-name')
-        artistName.classList.add('card-text')
+        artistName.classList.add('artist-name')
         artistName.innerText = element.name
 
         // Cria um elemento para a imagem do card
@@ -37,8 +38,7 @@ function displayResults(resultado) {
         artistImage.src = element.urlImg;
 
         // Posiciona os elementos
-        gridCont.appendChild(artistName)
-        gridCont.appendChild(artistImage)
+        gridCont.appendChild(cardArtist)
     });                                     
     
 
