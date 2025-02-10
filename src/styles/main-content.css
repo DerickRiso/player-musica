@@ -256,10 +256,10 @@
 }
 
 .grid-container {
-  grid-gap: var(--grid-gap);
   display: grid;
-  grid-template-columns: repeat(var(--column-count),minmax(0,1fr));
-  min-width: var(--min-container-width)
+  grid-gap: 30px 80px;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 372px;
 }
 
 .artist-card {
