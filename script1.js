@@ -14,6 +14,8 @@ async function requestApi(searchValue) {
     const regex = new RegExp(searchValue);
     // Filtra os dados de acordo com a entrada
     const resultado = dados.filter(item => regex.test(item.name.toLowerCase()));
+    // Chamada à função para exibição dos resultados
+    displayResults(resultado);
     return resultado;
 };
 
@@ -22,9 +24,8 @@ async function requestApi(searchValue) {
 function displayResults(resultado) {
     resultPlaylist.classList.add('hidden')  // Oculta as playlists
 
-    results.forEach((element) => {  
+    resultado.forEach((element) => {  
     
-        
         // Cria um elemento para o texto do card
         const artistName = document.getElementById('artist-name')
         artistName.classList.add('card-text')
