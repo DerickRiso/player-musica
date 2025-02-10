@@ -38,7 +38,7 @@ function displayResults(resultado) {
         artistImage.src = element.urlImg;
 
         // Posiciona os elementos
-        gridCont.appendChild(cardArtist)
+        gridCont.appendChild(cardArtist);
     });                                     
     
 
