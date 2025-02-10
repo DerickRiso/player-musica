@@ -4,20 +4,22 @@ const gridCont = document.getElementById('grid-container')
 const resultPlaylist = document.getElementById('result-playlists')
 const searchValue = searchInput.value
 
-// Eu não sei como, eu não sei porque, mas isso funcionou de alguma forma, já é um avanço
+// Função assíncrona que faz busca na api
 async function requestApi(searchValue) {
+    // O await faz a função ser pausada até ser realizadoa busca e o retorno dela
     const response = await fetch("http://localhost:3000/artists");
-
     const dados = await response.json();
+    
+    // Cria uma expressão regular para a entrada do usuário
     const regex = new RegExp(searchValue);
-    const resultado = dados.filter(item => regex.test(item.id));
-
+    // Filtra os dados de acordo com a entrada
+    const resultado = dados.filter(item => regex.test(item.name.toLowerCase()));
     return resultado;
 };
 
 
 // Mostra os resultados e oculta as playlists
-function displayResults(results) {
+function displayResults(resultado) {
     resultPlaylist.classList.add('hidden')  // Oculta as playlists
 
     results.forEach((element) => {  
