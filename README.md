@@ -7,3 +7,5 @@ O projeto conta com uma API simples com alguns artistas para a ferramenta de pes
 A aplicação possuía alguns bugs (documentados no issues) devido à uma função que não funcionava. Passei um bom tempo tentando descobrir o erro, mas não consegui, optei por refatorar a função inteira e mudar o método de pesquisa e filtragem.
 
 Caso tenha interesse, o script com a função antiga está na pasta "old". Fiquei encucado com o problema que não consegui resolver, caso descubra uma solução, entre em contato.
+
+![image](./old/image.png)
