@@ -4,38 +4,64 @@ const gridCont = document.getElementById('grid-container')
 const resultPlaylist = document.getElementById('result-playlists')
 const searchValue = searchInput.value
 
-// Busca resultados da pesquisa na api
-function requestApi(searchValue) {
-    const url = `http://localhost:3000/artists?name_like=${searchValue}`//ta dando erro
-    fetch(url)  // Busca dados na api
-        .then((response) => response.json()) // Retorna uma resposta em json
-        .then((results) => displayResults(results)) // Results é um objeto json com a resposta da busca    
-        .catch((error) => {
-            console.error('Houve um problema com a operação fetch:', error);
-        });
+// Função assíncrona que faz busca na api
+async function requestApi(searchValue) {
+    // O await faz a função ser pausada até ser realizadoa busca e o retorno dela
+    const response = await fetch("http://localhost:3000/artists");
+    const dados = await response.json();
+    
+    // Cria uma expressão regular para a entrada do usuário
+    const regex = new RegExp(searchValue, 'i');
+    // Filtra os dados de acordo com a entrada
+    const resultado = dados.filter(item => regex.test(item.name));
+    // Chamada à função para exibição dos resultados
+    displayResults(resultado);
+    return resultado;
 };
 
 
 // Mostra os resultados e oculta as playlists
-function displayResults(results) {
+function displayResults(resultado) {
     resultPlaylist.classList.add('hidden')  // Oculta as playlists
+    gridCont.innerHTML = '';
 
-    results.forEach((element) => {  
+    resultado.forEach((element) => {  
+        // Cria o card
+        const cardArtist = document.createElement('div')
+        cardArtist.classList.add('artist-card')
+
+        // Cria o container da imagem
+        const cardImg = document.createElement('div')
+        cardImg.classList.add('card-img')
+
+        // Cria o container do texto
+        const cardText = document.createElement('div')
+        cardText.classList.add('card-text')
+
+        // Cria a categoria do card
+        const categorie = document.createElement('span')
+        categorie.classList.add('artist-categorie')
+        categorie.innerText = "Artista"
     
-        
-        // Cria um elemento para o texto do card
-        const artistName = document.getElementById('artist-name')
-        artistName.classList.add('card-text')
+        // Cria o texto do card
+        const artistName = document.createElement('span')
+        artistName.classList.add('artist-name')
         artistName.innerText = element.name
 
-        // Cria um elemento para a imagem do card
-        const artistImage = document.getElementById('artist-img')
+        // Cria a imagem do card
+        const artistImage = document.createElement('img')
         artistImage.classList.add('artist-img')
         artistImage.src = element.urlImg;
 
+
+        cardArtist.appendChild(cardImg)
+        cardArtist.appendChild(cardText)
+        cardImg.appendChild(artistImage)
+        cardText.appendChild(artistName)
+        cardText.appendChild(categorie)
+
         // Posiciona os elementos
-        gridCont.appendChild(artistName)
-        gridCont.appendChild(artistImage)
+        gridCont.appendChild(cardArtist);
     });                                     
     
 
@@ -50,7 +76,7 @@ document.addEventListener('input', function() {
         return;
     } 
 
-    requestApi(searchValue)
+    requestApi(searchValue).then(console.log);
 });
 
 
