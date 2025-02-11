@@ -109,12 +109,10 @@ body {
 .section-playlist-content .text {
     padding-bottom: 14px;
     color: #fff;
-    
 }
 
 .section-playlist-content .title {
     font-weight: 700;
-
 }
 
 .section-playlist-content .subtitle {
@@ -206,7 +204,6 @@ footer button:hover {
     width: 90px;
     background-color: #3A70BF;
     z-index: 0;
-
 }
 
 /* Itens gerais */
@@ -219,7 +216,6 @@ a {
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
-    
 }
 
 .fa {
